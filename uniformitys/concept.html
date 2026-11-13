@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="img/uniformitys-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="uniformitys.css">
+<title>Uniformitys: Concept Note</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --royal:#1D3169; --royal-deep:#141F45; --french:#017097; --cyan:#59CAEF;
+    --cerulean:#8AD3DF; --charcoal:#404041; --paper:#F3F7F8; --white:#FFFFFF;
+    --surface-alt:#E2EEF2; --line:#D3E0E5; --text-muted:#4E5D63;
+    --display: "Oswald", "Arial Narrow", sans-serif;
+    --sans: "Libre Franklin", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--paper);}
+  body{font-family:var(--sans); color:var(--charcoal); font-size:15px; line-height:1.6;}
+  .page{max-width:880px;margin:0 auto;background:var(--paper);}
+  .eyebrow{font-family:var(--sans);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--french);}
+  h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:0;text-transform:uppercase;color:var(--french);}
+  .cover{position:relative;background:linear-gradient(170deg,var(--royal) 0%, var(--french) 100%);color:#fff;padding:40px 48px 34px;overflow:hidden;}
+  .cover .toprow{display:flex;justify-content:space-between;align-items:flex-start;}
+  .cover img.logo{height:40px;}
+  .cover .np1mark{display:flex;align-items:center;gap:8px;opacity:.95;}
+  .cover .np1mark img{height:22px;}
+  .cover .np1mark span{font-size:12px;font-weight:600;letter-spacing:.04em;color:#fff;font-family:var(--sans);}
+  .cover .rule{height:8px;background:var(--cyan);margin:22px -48px -34px;}
+  .hook{padding:40px 48px 8px;}
+  .hook p.lead{font-family:var(--display);font-weight:600;color:var(--royal);font-size:26px;line-height:1.28;margin:0;text-transform:none;letter-spacing:0;}
+  .hook .byline{margin-top:14px;color:var(--text-muted);font-size:13px;}
+  .stats{display:flex;gap:0;margin:28px 48px 8px;border-top:4px solid var(--cyan);padding-top:14px;flex-wrap:wrap;}
+  .stat{flex:1 1 140px;padding-right:14px;min-width:0;}
+  .stat .num{font-family:var(--display);font-weight:700;font-size:30px;color:var(--royal);line-height:1;}
+  .stat .lbl{font-size:12px;color:var(--text-muted);margin-top:6px;line-height:1.4;}
+  section{padding:26px 48px;}
+  section.alt{background:var(--surface-alt);}
+  .section-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
+  .section-head .n{font-family:var(--display);font-weight:700;color:var(--cyan);font-size:13px;background:var(--royal);padding:3px 8px;border-radius:4px;}
+  table{width:100%;border-collapse:collapse;}
+  .figtable td,.figtable th{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;font-size:14px;}
+  .figtable th{color:var(--french);font-family:var(--display);text-transform:uppercase;font-size:12px;letter-spacing:.05em;border-bottom:2px solid var(--cyan);}
+  .figtable .k{font-family:var(--display);font-weight:600;color:var(--royal);white-space:nowrap;text-transform:uppercase;font-size:13px;}
+  .split{display:flex;gap:28px;align-items:flex-start;}
+  .split .txt{flex:1.3;}
+  .split .img{flex:1;}
+  .photo{border-radius:20px;overflow:hidden;box-shadow:0 1px 0 var(--line);}
+  .photo img{width:100%;display:block;object-fit:cover;}
+  .caption{font-size:11px;color:var(--text-muted);margin-top:6px;}
+  .tabgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .tab{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px 18px;}
+  .tab .bullet{display:inline-block;width:10px;height:10px;border:2px solid var(--french);border-radius:50%;margin-right:7px;}
+  .tab h3{font-size:15px;color:var(--royal);text-transform:none;letter-spacing:0;}
+  .tab .when{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+  .ask-row{display:flex;justify-content:space-between;align-items:center;background:var(--royal);color:#fff;border-radius:16px;padding:18px 24px;margin-bottom:14px;}
+  .ask-row .amt{font-family:var(--display);font-size:34px;font-weight:700;color:var(--cyan);}
+  .ask-row .lbl{font-size:12px;color:#B9C6E0;text-transform:uppercase;letter-spacing:.06em;}
+  footer{background:var(--royal-deep);color:#fff;padding:26px 48px;display:flex;justify-content:space-between;align-items:center;}
+  footer .contacts{font-size:13px;line-height:1.7;}
+  footer .contacts b{color:var(--cyan);}
+  footer .bynp1{display:flex;align-items:center;gap:8px;opacity:.9;}
+  footer .bynp1 img{height:20px;}
+  footer .bynp1 span{font-size:11px;font-weight:600;letter-spacing:.04em;}
+  .quartershape{position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--cyan), transparent 70%);opacity:.25;}
+  @media (max-width:640px){
+    .split{flex-direction:column;}
+    .split .txt,.split .img{min-width:0;}
+    .tabgrid{grid-template-columns:1fr;}
+    table.figtable{width:100%;table-layout:fixed;}
+  }
+  @media print{
+    body{font-size:13px;}
+    .page{max-width:100%;}
+    section{padding:18px 36px;}
+  }
+</style>
+</head>
+<body>
+<nav class="uusbar" aria-label="Uniformitys raise">
+  <a class="uusbar-home" href="./"><img src="img/uniformitys-logo.svg" alt="Uniformitys" style="height:20px;filter:brightness(0) invert(1)"><span>Raise pack</span></a>
+  <div class="uusbar-links"><a href="concept.html" class="on">Concept note</a><a href="note.html">Investment note</a><a href="deck.html">Deck</a><a href="np1.html">N+1 presents</a><a class="cta" href="https://calendar.app.google/fEmz6c6agtEmH6WM8" target="_blank" rel="noopener">Book a meeting</a></div>
+</nav>
+<div class="docbar"><a href="pdf/uniformitys-concept-note-nov-2026.pdf" download>Download PDF</a></div>
+<div class="page">
+
+  <div class="cover">
+    <div class="quartershape"></div>
+    <div class="toprow">
+      <img class="logo" src="img/uniformitys-logo.svg" alt="Uniformitys">
+      <div class="np1mark"><img src="img/np1-fountain-gold.svg" alt=""><span>by N+1</span></div>
+    </div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="hook">
+    <div class="split">
+      <div class="txt">
+        <p class="eyebrow">Concept note &middot; Uniformitys</p>
+        <p class="lead">Parents in Kabokweni want school uniforms and will pay for them, but most schools around them have no supplier at all. Uniformitys is that supplier, moving to local manufacture and bringing pride to kasi schools.</p>
+        <p class="byline">Upturn Operations (Pty) Ltd, trading as Uniformitys &middot; Dressed as One &middot; 12 November 2026</p>
+      </div>
+      <div class="img">
+        <div class="photo"><img src="img/vulindlela-jacket.jpg" alt="Learners in Uniformitys winter jackets"></div>
+        <p class="caption">Learners in the Vulindlela Senior Secondary winter jacket.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">4</div><div class="lbl">schools fully on board, plus sales to a handful of others</div></div>
+    <div class="stat"><div class="num">~10%</div><div class="lbl">of their learners we can supply today</div></div>
+    <div class="stat"><div class="num">23</div><div class="lbl">schools that have expressed intent to make us their supplier</div></div>
+    <div class="stat"><div class="num">R1m</div><div class="lbl">revenue per school per year once made locally (base case)</div></div>
+    <div class="stat"><div class="num">2028</div><div class="lbl">cash positive</div></div>
+  </div>
+
+  <section>
+    <div class="section-head"><span class="n">01</span><h2 style="font-size:20px;">What, proof, opportunity</h2></div>
+    <table class="figtable">
+      <tr><td class="k">What</td><td>Uniformitys provides school uniforms where parents live and work in townships. Moving towards local manufacture, bringing pride to kasi schools.</td></tr>
+      <tr><td class="k">Proof</td><td>Four schools are fully on board and we have sold to a handful of others. The next 5 or 6 are ready for a full ramp-up, and 23 schools have expressed real intent to make us their supplier. Schools invite us to parent meetings and give us space to sell on their grounds.</td></tr>
+      <tr><td class="k">Opportunity</td><td>No one supplies these schools locally. Parents travel up to 40&nbsp;km by taxi to town to buy generic uniforms and try to match colours and badges themselves. A school of 1,000 learners is worth about R1m per year to a local maker, and new schools keep opening.</td></tr>
+    </table>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><span class="n">02</span><h2 style="font-size:20px;">Why N+1 backed it</h2></div>
+    <div class="split">
+      <div class="txt">
+        <p>Sphiwe Masinga grew up in Kabokweni and saw a simple product his schools needed that nobody supplied. N+1: Impact Venture Partners put in R120k at the end of 2024 so he could buy stock and leave his call-centre job, and has supported him since with strategy, accounts, brand and design.</p>
+        <p>Four schools are now fully on board and the next 5 or 6 are ready for a full ramp-up. What holds Uniformitys back is supply: bought-in stock from Johannesburg takes up to three months.</p>
+      </div>
+      <div class="img">
+        <div class="photo"><img src="img/sphiwe-samples.jpg" alt="Sphiwe Masinga with uniform samples"></div>
+        <p class="caption">Sphiwe with uniform samples, Kabokweni.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="n">03</span><h2 style="font-size:20px;">What's next</h2></div>
+    <div class="tabgrid">
+      <div class="tab"><div class="when">Jan&ndash;Feb 2027</div><h3><span class="bullet"></span>Stock and the full shop team for the back-to-school season</h3></div>
+      <div class="tab"><div class="when">Mid-2027</div><h3><span class="bullet"></span>Own premises and shop in Kabokweni, serving 6 to 8 schools</h3></div>
+      <div class="tab"><div class="when">H2 2027</div><h3><span class="bullet"></span>Embroidery, sublimation, printing, knitwear and a full sewing line; team of 14</h3></div>
+      <div class="tab"><div class="when">2028 season</div><h3><span class="bullet"></span>Made mostly in Kabokweni; 10 schools; cash positive</h3></div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><span class="n">04</span><h2 style="font-size:20px;">The ask and where it gets us</h2></div>
+    <div class="ask-row">
+      <div><div class="lbl">Raising, in three tranches</div><div class="amt">R500k &rarr; R1.5m &rarr; R5m</div></div>
+      <div style="text-align:right;max-width:260px;font-size:12px;color:#B9C6E0;">Minimum close R1.5m: stock, premises and the shop</div>
+    </div>
+    <table class="figtable">
+      <tr><td class="k">Where it gets us</td><td>Full local production for the 2028 season, cash positive in 2028, no further raise planned</td></tr>
+      <tr><td class="k">Terms</td><td>A secured note and equity, set out in the investment note</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="n">05</span><h2 style="font-size:20px;">The numbers (base case)</h2></div>
+    <div class="split">
+      <div class="txt">
+        <table class="figtable" style="margin-bottom:16px;">
+          <tr><th>One school, fully served</th><th></th></tr>
+          <tr><td>Learners</td><td>about 1,000</td></tr>
+          <tr><td>Spend per learner per year</td><td>R1,000</td></tr>
+          <tr><td>Revenue per year</td><td>R1m</td></tr>
+          <tr><td>Gross margin once made locally</td><td>50%</td></tr>
+        </table>
+      </div>
+      <div class="img">
+        <div class="photo"><img src="img/tailor-at-work.jpg" alt="Tailor at work in the Kabokweni workshop"></div>
+        <p class="caption">Tailor at work in the Kabokweni workshop.</p>
+      </div>
+    </div>
+    <table class="figtable">
+      <tr><th>R</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th><th>2031</th></tr>
+      <tr><td>Schools fully served</td><td>6</td><td>10</td><td>12</td><td>14</td><td>16</td></tr>
+      <tr><td>Revenue</td><td>4.0m</td><td>10.8m</td><td>13.7m</td><td>17.0m</td><td>20.4m</td></tr>
+      <tr><td>EBITDA</td><td>136k</td><td>3.0m</td><td>4.0m</td><td>5.1m</td><td>6.3m</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--text-muted);margin-top:14px;">About 5 fully served schools cover the full factory's fixed costs. Even at a floor of R750 per learner the business is EBITDA-positive from 2028. The full figures are in the investor model.</p>
+  </section>
+
+  <footer>
+    <div class="contacts">
+      <b>Sphiwe Masinga</b>, Founder &middot; sphiwe@uniformitys.co.za &middot; 082 595 0723<br>
+      <b>Matt Beckett</b>, Venture Partner &middot; matt@np1.co.za &middot; 083 457 4119
+    </div>
+    <div class="bynp1"><img src="img/np1-fountain-gold.svg" alt=""><span>by N+1</span></div>
+  </footer>
+
+</div>
+</body>
+</html>

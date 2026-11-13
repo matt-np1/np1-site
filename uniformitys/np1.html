@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="img/uniformitys-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="uniformitys.css">
+<title>N+1 presents: Uniformitys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --royal:#1D3169; --royal-deep:#141F45; --french:#017097; --cyan:#59CAEF;
+    --cerulean:#8AD3DF; --charcoal:#404041; --paper:#F3F7F8; --white:#FFFFFF;
+    --surface-alt:#E2EEF2; --line:#D3E0E5; --text-muted:#4E5D63;
+    --display: "Oswald", "Arial Narrow", sans-serif;
+    --sans: "Libre Franklin", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--paper);}
+  body{font-family:var(--sans); color:var(--charcoal); font-size:15px; line-height:1.6;}
+  .page{max-width:880px;margin:0 auto;background:var(--paper);}
+  .eyebrow{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--french);}
+  h1,h2{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:0;text-transform:uppercase;color:var(--french);}
+  .cover{position:relative;background:linear-gradient(170deg,var(--royal) 0%, var(--french) 100%);color:#fff;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;}
+  .cover .topbar{display:flex;justify-content:space-between;align-items:center;padding:28px 48px 0;}
+  .cover .topbar .np1{display:flex;align-items:center;gap:8px;}
+  .cover .topbar .np1 img{height:22px;}
+  .cover .topbar .np1 span{font-size:12px;font-weight:600;letter-spacing:.04em;}
+  .cover .heroimg{position:absolute;inset:0;z-index:0;opacity:.28;}
+  .cover .heroimg img{width:100%;height:100%;object-fit:cover;}
+  .cover .herotext{position:relative;z-index:1;padding:46px 48px 30px;}
+  .cover .herotext .eyebrow{color:var(--cyan);}
+  .cover .herotext h1{font-size:40px;color:#fff;line-height:1.1;}
+  .cover .herotext p{color:#dfe8f2;font-size:15px;max-width:520px;margin-top:10px;}
+  .cover .rule{height:8px;background:var(--cyan);}
+  section{padding:28px 48px;}
+  section.alt{background:var(--surface-alt);}
+  .section-head{margin-bottom:12px;}
+  .section-head h2{font-size:19px;}
+  .split{display:flex;gap:28px;align-items:flex-start;}
+  .split .txt{flex:1.3;}
+  .split .img{flex:1;}
+  .photo{border-radius:20px;overflow:hidden;box-shadow:0 1px 0 var(--line);}
+  .photo img{width:100%;display:block;object-fit:cover;}
+  .caption{font-size:11px;color:var(--text-muted);margin-top:6px;}
+  table{width:100%;border-collapse:collapse;}
+  .figtable td,.figtable th{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;font-size:13.5px;}
+  .figtable th{color:var(--french);font-family:var(--display);text-transform:uppercase;font-size:11px;letter-spacing:.05em;border-bottom:2px solid var(--cyan);}
+  .readnext{list-style:none;margin:0;padding:0;counter-reset:rn;}
+  .readnext li{counter-increment:rn;padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline;font-size:14px;}
+  .readnext li::before{content:counter(rn);font-family:var(--display);font-weight:700;color:#fff;background:var(--french);width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+  .raisebar{background:var(--royal);color:#fff;padding:22px 48px;}
+  .raisebar .row{display:flex;gap:26px;align-items:flex-start;}
+  .raisebar .ask{flex-shrink:0;}
+  .raisebar .ask .lbl{font-size:10.5px;color:var(--cyan);text-transform:uppercase;letter-spacing:.08em;}
+  .raisebar .ask .amt{font-family:var(--display);font-weight:700;font-size:28px;color:#fff;line-height:1.1;margin-top:3px;}
+  .raisebar .why{font-size:12.5px;color:#dfe8f2;line-height:1.5;border-left:2px solid var(--cyan);padding-left:16px;}
+  .impactstats{display:flex;border-top:1px solid rgba(255,255,255,.18);margin-top:16px;padding-top:14px;gap:0;}
+  .impactstats .stat{flex:1;padding-right:12px;}
+  .impactstats .stat .num{font-family:var(--display);font-weight:700;font-size:21px;color:var(--cyan);line-height:1;}
+  .impactstats .stat .lbl{font-size:10.5px;color:#B9C6E0;margin-top:5px;line-height:1.35;}
+  footer{background:var(--royal-deep);color:#fff;padding:26px 48px;display:flex;justify-content:space-between;align-items:center;}
+  footer .contacts{font-size:13px;line-height:1.7;}
+  footer .contacts b{color:var(--cyan);}
+  footer .bynp1{display:flex;align-items:center;gap:8px;opacity:.9;}
+  footer .bynp1 img{height:20px;}
+  footer .bynp1 span{font-size:11px;font-weight:600;letter-spacing:.04em;}
+  @media (max-width:640px){
+    .split{flex-direction:column;}
+    .split .txt,.split .img{min-width:0;}
+    .raisebar .row{flex-direction:column;gap:14px;}
+    .impactstats{flex-wrap:wrap;}
+    .impactstats .stat{flex:1 1 45%;padding-right:8px;margin-bottom:10px;}
+    table.figtable{width:100%;table-layout:fixed;}
+  }
+  @media print{ body{font-size:13px;} .page{max-width:100%;} section{padding:18px 36px;} }
+</style>
+</head>
+<body>
+<nav class="uusbar" aria-label="Uniformitys raise">
+  <a class="uusbar-home" href="./"><img src="img/uniformitys-logo.svg" alt="Uniformitys" style="height:20px;filter:brightness(0) invert(1)"><span>Raise pack</span></a>
+  <div class="uusbar-links"><a href="concept.html">Concept note</a><a href="note.html">Investment note</a><a href="deck.html">Deck</a><a href="np1.html" class="on">N+1 presents</a><a class="cta" href="https://calendar.app.google/fEmz6c6agtEmH6WM8" target="_blank" rel="noopener">Book a meeting</a></div>
+</nav>
+<div class="docbar"><a href="pdf/n1-presents-uniformitys-nov-2026.pdf" download>Download PDF</a></div>
+<div class="page">
+
+  <div class="cover">
+    <div class="heroimg"><img src="img/hero-workshop.jpg" alt=""></div>
+    <div class="topbar">
+      <div style="font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.1em;">N+1 PRESENTS</div>
+      <div class="np1"><img src="img/np1-fountain-gold.svg" alt=""><span>IMPACT VENTURE PARTNERS</span></div>
+    </div>
+    <div class="herotext">
+      <p class="eyebrow">Portfolio venture &middot; raise now open</p>
+      <h1>Uniformitys</h1>
+      <p>Dressed as One. School uniforms made closer to home, with a local team ready to grow.</p>
+    </div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="raisebar">
+    <div class="row">
+      <div class="ask">
+        <div class="lbl">Raising, in tranches</div>
+        <div class="amt">R500k &rarr; R1.5m &rarr; R5m</div>
+      </div>
+      <div class="why">To build Uniformitys&rsquo; own factory and shop in Kabokweni, so it can make uniforms for every learner locally instead of about 10% today. That reaches cash positive in 2028 and about R20m revenue across 16 schools by 2031, with no further raise planned.</div>
+    </div>
+    <div class="impactstats">
+      <div class="stat"><div class="num">+15</div><div class="lbl">local manufacturing jobs added in Kabokweni, team of 5 to 20 by 2031</div></div>
+      <div class="stat"><div class="num">~R20m</div><div class="lbl">per year in uniform production moved from Johannesburg to Kabokweni by 2031</div></div>
+      <div class="stat"><div class="num">16</div><div class="lbl">schools fully served by 2031, up from 4 today</div></div>
+      <div class="stat"><div class="num">2028</div><div class="lbl">cash positive, no further raise planned</div></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-head"><h2>Why Uniformitys exists</h2></div>
+    <div class="split">
+      <div class="txt">
+        <p>In Kabokweni, Mpumalanga, thousands of families need school uniforms every year, and there is nowhere local to buy them. Parents travel to town and try to match colours and badges themselves, or buy from a few informal sellers.</p>
+        <p>Sphiwe Masinga grew up with this. He saw a simple product that the schools around him needed, and that nobody was supplying.</p>
+      </div>
+      <div class="img">
+        <div class="photo"><img src="img/sphiwe-samples.jpg" alt="Sphiwe Masinga with uniform samples"></div>
+        <p class="caption">Sphiwe with uniform samples, Kabokweni.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><h2>Why we backed him</h2></div>
+    <p>Sphiwe is the classic township founder N+1 exists to back. The business is no rocket science: good uniforms, made close to the schools, sold straight to families. What he had was the market, the school relationships and the drive to do the work.</p>
+    <p>At the end of 2024, N+1 put in R120k so he could buy stock and leave his call-centre job. Since then we have supported him with strategy, accounts, brand and design while he built the business school by school.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Where it is now</h2></div>
+    <div class="split">
+      <div class="img">
+        <div class="photo"><img src="img/ngodini-golfshirt.jpg" alt="School pupils in Uniformitys uniforms"></div>
+        <p class="caption">Learners at one of the schools Uniformitys now serves.</p>
+      </div>
+      <div class="txt">
+        <p>Four schools are fully on board, and Uniformitys has sold to a handful of others, but it can supply only about 10% of their learners, because bought-in stock from Johannesburg takes up to three months.</p>
+        <p>The next 5 or 6 schools are ready for a full ramp-up, and 23 schools have expressed real intent to make Uniformitys their supplier. Sphiwe has proved the demand and started making locally. He is ready for the next step.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><h2>What the raise builds</h2></div>
+    <table class="figtable">
+      <tr><td style="font-family:var(--display);font-weight:700;color:var(--royal);">Raising</td><td>R5m, in three tranches: R500k, then to R1.5m, then to R5m, to build its own factory and shop in Kabokweni</td></tr>
+      <tr><td style="font-family:var(--display);font-weight:700;color:var(--royal);">Unit</td><td>A school of about 1,000 learners is worth about R1m per year once uniforms are made locally</td></tr>
+      <tr><td style="font-family:var(--display);font-weight:700;color:var(--royal);">Path</td><td>Base case reaches R10.8m revenue and cash positive in 2028, about R20m by 2031, with growth after that paid from its own cash</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>N+1's role from here</h2></div>
+    <div class="split">
+      <div class="txt">
+        <p>N+1 is a permanent partner. With this round we move from advisor to operating partner: we build and install the ordering, payment, stock and production system, and run operating finance and reporting alongside Sphiwe.</p>
+      </div>
+      <div class="img">
+        <div class="photo"><img src="img/tailor-at-work.jpg" alt="Tailor at work in the Kabokweni workshop"></div>
+        <p class="caption">Tailor at work in the Kabokweni workshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><h2>Read next</h2></div>
+    <ol class="readnext">
+      <li>Concept note, one page</li>
+      <li>Pitch deck, 12 slides, shared by link</li>
+      <li>Investment note, with terms and term sheet</li>
+      <li>Investor model and data room</li>
+    </ol>
+  </section>
+
+  <footer>
+    <div class="contacts">
+      <b>Matt Beckett</b>, Venture Partner, N+1: Impact Venture Partners &middot; matt@np1.co.za &middot; 083 457 4119<br>
+      <b>Sphiwe Masinga</b>, Founder, Uniformitys &middot; sphiwe@uniformitys.co.za &middot; 082 595 0723
+    </div>
+    <div class="bynp1"><img src="img/np1-fountain-gold.svg" alt=""><span>by N+1</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
