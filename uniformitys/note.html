@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="img/uniformitys-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="uniformitys.css">
+<title>Uniformitys: Investment Note</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --royal:#1D3169; --royal-deep:#141F45; --french:#017097; --cyan:#59CAEF;
+    --cerulean:#8AD3DF; --charcoal:#404041; --paper:#F3F7F8; --white:#FFFFFF;
+    --surface-alt:#E2EEF2; --line:#D3E0E5; --text-muted:#4E5D63;
+    --display: "Oswald", "Arial Narrow", sans-serif;
+    --sans: "Libre Franklin", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--paper);}
+  body{font-family:var(--sans); color:var(--charcoal); font-size:14.5px; line-height:1.62;}
+  .page{max-width:880px;margin:0 auto;background:var(--paper);}
+  .eyebrow{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:11.5px;color:var(--french);}
+  h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:0;text-transform:uppercase;color:var(--french);}
+  .cover{position:relative;background:linear-gradient(170deg,var(--royal) 0%, var(--french) 100%);color:#fff;overflow:hidden;min-height:280px;}
+  .cover .heroimg{position:absolute;inset:0;z-index:0;opacity:.24;}
+  .cover .heroimg img{width:100%;height:100%;object-fit:cover;}
+  .cover .topbar{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:28px 48px 0;}
+  .cover .topbar .np1{display:flex;align-items:center;gap:8px;}
+  .cover .topbar .np1 img{height:20px;}
+  .cover .topbar .np1 span{font-size:11px;font-weight:600;letter-spacing:.04em;}
+  .cover .herotext{position:relative;z-index:1;padding:40px 48px 26px;}
+  .cover .herotext .eyebrow{color:var(--cyan);}
+  .cover .herotext h1{font-size:38px;color:#fff;line-height:1.08;margin-top:6px;}
+  .cover .herotext .sub{color:#dfe8f2;font-size:13px;margin-top:8px;}
+  .cover .hooktext{position:relative;z-index:1;padding:0 48px 26px;font-family:var(--display);font-weight:600;color:#fff;font-size:19px;line-height:1.3;max-width:620px;text-transform:none;}
+  .cover .rule{height:8px;background:var(--cyan);}
+  .legal{background:var(--surface-alt);color:var(--text-muted);font-size:12px;padding:12px 48px;font-style:italic;}
+  section{padding:26px 48px;}
+  section.alt{background:var(--surface-alt);}
+  .section-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
+  .section-head .n{font-family:var(--display);font-weight:700;color:var(--cyan);font-size:12px;background:var(--royal);padding:3px 8px;border-radius:4px;flex-shrink:0;}
+  .section-head h2{font-size:18px;}
+  table{width:100%;border-collapse:collapse;}
+  .figtable td,.figtable th{padding:8px 11px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;font-size:13px;}
+  .figtable th{color:var(--french);font-family:var(--display);text-transform:uppercase;font-size:10.5px;letter-spacing:.05em;border-bottom:2px solid var(--cyan);}
+  .figtable .k{font-family:var(--display);font-weight:600;color:var(--royal);white-space:nowrap;text-transform:uppercase;font-size:12px;}
+  .figtable tr:last-child td{border-bottom:none;}
+  .offerbox{background:var(--royal);color:#fff;border-radius:16px;padding:4px 0;margin-bottom:16px;}
+  .offerbox table{width:100%;}
+  .offerbox td{padding:10px 20px;border-bottom:1px solid rgba(255,255,255,.14);font-size:13px;}
+  .offerbox tr:last-child td{border-bottom:none;}
+  .offerbox .k{font-family:var(--display);text-transform:uppercase;font-size:11px;letter-spacing:.05em;color:var(--cyan);white-space:nowrap;}
+  .split{display:flex;gap:26px;align-items:flex-start;}
+  .split .txt{flex:1.3;}
+  .split .img{flex:1;}
+  .photo{border-radius:20px;overflow:hidden;box-shadow:0 1px 0 var(--line);}
+  .photo img{width:100%;display:block;object-fit:cover;}
+  .caption{font-size:10.5px;color:var(--text-muted);margin-top:6px;}
+  .stats{display:flex;gap:0;border-top:4px solid var(--cyan);padding-top:12px;flex-wrap:wrap;}
+  .stat{flex:1 1 140px;padding-right:12px;min-width:0;}
+  .stat .num{font-family:var(--display);font-weight:700;font-size:24px;color:var(--royal);line-height:1;}
+  .stat .lbl{font-size:10.5px;color:var(--text-muted);margin-top:5px;line-height:1.35;}
+  .riskgrid{display:grid;grid-template-columns:1fr;gap:10px;}
+  .riskhead{display:grid;grid-template-columns:1fr 1.4fr 1.6fr;gap:14px;padding:0 16px 6px;}
+  .riskhead span{font-family:var(--display);font-weight:600;color:var(--french);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;}
+  .riskrow{display:grid;grid-template-columns:1fr 1.4fr 1.6fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:12.5px;}
+  .riskrow .h{font-family:var(--display);font-weight:600;color:var(--royal);font-size:12px;text-transform:uppercase;}
+  .riskrow .col-h{font-family:var(--display);font-weight:600;color:var(--text-muted);font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:2px;}
+  .annexhead{background:var(--royal-deep);color:#fff;padding:20px 48px;}
+  .annexhead h1{color:var(--cyan);font-size:24px;}
+  .annexhead p{color:#B9C6E0;font-size:12px;margin-top:6px;}
+  footer{background:var(--royal-deep);color:#fff;padding:26px 48px;display:flex;justify-content:space-between;align-items:center;}
+  footer .contacts{font-size:13px;line-height:1.7;}
+  footer .contacts b{color:var(--cyan);}
+  footer .bynp1{display:flex;align-items:center;gap:8px;opacity:.9;}
+  footer .bynp1 img{height:20px;}
+  footer .bynp1 span{font-size:11px;font-weight:600;letter-spacing:.04em;}
+  ol{margin:0;padding-left:20px;}
+  ol li{margin-bottom:6px;}
+  @media (max-width:640px){
+    .split{flex-direction:column;}
+    .split .txt,.split .img{min-width:0;}
+    .riskhead,.riskrow{grid-template-columns:1fr;}
+    table.figtable,.offerbox table{width:100%;table-layout:fixed;}
+  }
+  @media print{ body{font-size:12.5px;} .page{max-width:100%;} section{padding:16px 36px;} }
+</style>
+</head>
+<body>
+<nav class="uusbar" aria-label="Uniformitys raise">
+  <a class="uusbar-home" href="./"><img src="img/uniformitys-logo.svg" alt="Uniformitys" style="height:20px;filter:brightness(0) invert(1)"><span>Raise pack</span></a>
+  <div class="uusbar-links"><a href="concept.html">Concept note</a><a href="note.html" class="on">Investment note</a><a href="deck.html">Deck</a><a href="np1.html">N+1 presents</a><a class="cta" href="https://calendar.app.google/fEmz6c6agtEmH6WM8" target="_blank" rel="noopener">Book a meeting</a></div>
+</nav>
+<div class="docbar"><a href="pdf/uniformitys-investment-note-nov-2026.pdf" download>Download PDF</a></div>
+<div class="page">
+
+  <div class="cover">
+    <div class="heroimg"><img src="img/vulindlela-jacket.jpg" alt=""></div>
+    <div class="topbar">
+      <div style="font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;color:#fff;">INVESTMENT NOTE</div>
+      <div class="np1"><img src="img/np1-fountain-gold.svg" alt=""><span>by N+1</span></div>
+    </div>
+    <div class="herotext">
+      <p class="eyebrow">Upturn Operations (Pty) Ltd, trading as Uniformitys</p>
+      <h1>Uniformitys</h1>
+      <p class="sub">12 November 2026 &middot; Confidential</p>
+    </div>
+    <div class="hooktext">Parents in Kabokweni want school uniforms and will pay for them. Most schools around them have no supplier at all. Uniformitys is that supplier, moving to local manufacture and bringing pride to kasi schools.</div>
+    <div class="rule"></div>
+  </div>
+  <div class="legal">Indicative and confidential. The offer is proposed, and its terms are subject to legal and accounting review before any agreement.</div>
+
+  <section>
+    <div class="section-head"><span class="n">01</span><h2>Summary and the offer</h2></div>
+    <p>Uniformitys is raising <b>R5m</b> to build a uniform factory and shop in Kabokweni, Mpumalanga. Four schools are fully on board and it has sold to a handful of others, but it can serve only about 10% of their learners, because bought-in stock from Johannesburg takes up to three months. The next 5 or 6 schools are ready for a full ramp-up, and 23 schools in the area have expressed real intent to make Uniformitys their supplier. With local production, each school is worth about R1m per year, and the business turns cash positive from 2028.</p>
+    <div class="offerbox">
+      <table>
+        <tr><td class="k">Amount</td><td><b>R5m</b>, in three tranches: R500k, then to R1.5m, then to R5m</td></tr>
+        <tr><td class="k">Structure</td><td>R3m secured note at prime plus 2% (12.75% today) &middot; R2m equity for 20% of Upturn Operations (pre-money R8m)</td></tr>
+        <tr><td class="k">Min. ticket</td><td>R250k, in the note or equity</td></tr>
+        <tr><td class="k">Min. close</td><td>R1.5m (Tranches 1 and 2) for stock, premises and the shop, covered by the note</td></tr>
+        <tr><td class="k">Security</td><td>First bond over the Kabokweni property and a bond over the production equipment</td></tr>
+        <tr><td class="k">Reaches</td><td>Full local production for the 2028 season; cash positive in 2028; no further raise planned</td></tr>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--text-muted);">Uniformitys has been backed since 2024 by N+1: Impact Venture Partners, which runs its accounts, systems and strategy support.</p>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><span class="n">02</span><h2>What, proof, opportunity</h2></div>
+    <div class="split">
+      <div class="txt">
+        <table class="figtable">
+          <tr><td class="k">What</td><td>Uniformitys provides school uniforms where parents live and work in townships, moving towards local manufacture and bringing pride to kasi schools.</td></tr>
+          <tr><td class="k">Proof</td><td>Four schools are fully on board and Uniformitys has sold to a handful of others. The next 5 or 6 are ready for a full ramp-up, and 23 schools have expressed real intent to make it their supplier. Schools invite Sphiwe to parent meetings and give him space for pop-up stalls on their grounds.</td></tr>
+          <tr><td class="k">Opportunity</td><td>No one supplies these schools locally. Parents travel up to 40&nbsp;km by taxi to town to buy generic uniforms and try to match colours and badges themselves. Existing schools have never had a local supplier, and new schools open every year.</td></tr>
+        </table>
+      </div>
+      <div class="img">
+        <div class="photo"><img src="img/sphiwe-samples.jpg" alt="Sphiwe Masinga with uniform samples"></div>
+        <p class="caption">Sphiwe with uniform samples, Kabokweni.</p>
+      </div>
+    </div>
+    <h3 style="font-size:13px;margin-top:20px;margin-bottom:8px;color:var(--royal);">The problem</h3>
+    <ol style="font-size:13.5px;">
+      <li>Most schools around Kabokweni have no uniform supplier at all. Many had no formal uniform until recently, and hardly any have full uniform adoption. Parents want uniforms and will pay for them: this is an availability problem, not a demand problem.</li>
+      <li>Local options are a few informal traders and home sewers, with uneven quality and no school branding.</li>
+      <li>Uniformitys started as sourcing and distribution. Bought-in stock sits at the bottom of Johannesburg makers&rsquo; queues, with waits of three months or more, reaching only about 10% of learners at the schools it serves.</li>
+      <li>The founder grew up with this. Sphiwe Masinga, 30, started building Uniformitys in 2024 while working in a call centre, and went full time on 1 January 2025.</li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="n">03</span><h2>How Uniformitys works</h2></div>
+    <p>Uniformitys signs up a school, agrees its uniform list and specification, then sells direct to that school&rsquo;s families. The school pays no deposit and carries no cash-flow risk, which is why schools commit.</p>
+    <table class="figtable">
+      <tr><th>Step</th><th>What happens</th></tr>
+      <tr><td class="k">1. Agree the school</td><td>Sphiwe works with the principal or uniform committee on design, colours and crest. Emtfonjeni Secondary has signed a letter of intent.</td></tr>
+      <tr><td class="k">2. Sell to families</td><td>Parents order through WhatsApp, at pop-up stalls on school pickup days, or at the counter. They pay by card, payment link, cash or lay-by.</td></tr>
+      <tr><td class="k">3. Make</td><td>Cut, sew, brand and finish. Today 3 tailors on 3 machines make about 40% of garments; the rest is bought in from Johannesburg.</td></tr>
+      <tr><td class="k">4. Deliver</td><td>Collection at the workshop or delivery to the school at the start of term.</td></tr>
+    </table>
+    <h3 style="font-size:13px;margin-top:20px;margin-bottom:8px;color:var(--royal);">What the raise changes</h3>
+    <table class="figtable">
+      <tr><th>Today</th><th>After the raise</th></tr>
+      <tr><td>Workshop at the founder&rsquo;s home, 3 machines</td><td>Own premises in Kabokweni with a shop and stockroom</td></tr>
+      <tr><td>About 10% of learners served at each school</td><td>Every learner&rsquo;s uniform made and stocked locally</td></tr>
+      <tr><td>Lead times of up to three months on bought-in items</td><td>Days to three weeks on made items</td></tr>
+      <tr><td>Stock tracked on paper</td><td>Ordering, payment and stock system feeding production planning</td></tr>
+      <tr><td>Team of 5</td><td>Team of 14 from mid-2027, 20 by 2031</td></tr>
+    </table>
+    <p style="font-size:12.5px;color:var(--text-muted);margin-top:10px;">A second revenue line follows the embroidery and printing equipment: kit and branding for local businesses, churches and sports clubs, which today order from outside the township. The base case counts R100k in 2027, growing to R1m by 2031.</p>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><span class="n">04</span><h2>The single unit: one school, fully served</h2></div>
+    <div class="split">
+      <div class="txt">
+        <p>The unit is one secondary school of about 1,000 learners, every one of whom needs a uniform. In the base case each learner spends R1,000 per year, so a school is worth R1m per year, reached in its first year. The only limit is production capacity.</p>
+        <table class="figtable">
+          <tr><th>Per school</th><th>Floor</th><th>Base</th><th>Upside</th></tr>
+          <tr><td>Spend per learner / year</td><td>R750</td><td>R1,000</td><td>R1,500</td></tr>
+          <tr><td>Revenue per year</td><td>R750k</td><td>R1m</td><td>R1.5m</td></tr>
+          <tr><td>Gross margin</td><td>45%</td><td>50%</td><td>50%</td></tr>
+          <tr><td>Contribution / year</td><td>R300k</td><td>R450k</td><td>R675k</td></tr>
+        </table>
+      </div>
+      <div class="img">
+        <div class="photo"><img src="img/tailor-at-work.jpg" alt="Tailor at work in the Kabokweni workshop"></div>
+        <p class="caption">Tailor at work in the Kabokweni workshop.</p>
+      </div>
+    </div>
+    <h3 style="font-size:13px;margin-top:18px;margin-bottom:8px;color:var(--royal);">Breakeven</h3>
+    <p style="font-size:13.5px;">The full factory&rsquo;s fixed costs in 2029, staff and running costs, are about R2.23m. At 2029 prices, about R1.1m per school, roughly <b>5 fully served schools</b> cover them, against a pipeline of 23 schools.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="n">05</span><h2>Forecast, 2027&ndash;2031</h2></div>
+    <p>In the base case revenue grows from R4.0m in 2027 to R20.4m in 2031 as Uniformitys moves from 6 to 16 fully served schools. EBITDA is R136k in 2027, R2.95m in 2028 and R6.25m in 2031.</p>
+    <table class="figtable">
+      <tr><th>R</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th><th>2031</th></tr>
+      <tr><td>Schools fully served</td><td>6</td><td>10</td><td>12</td><td>14</td><td>16</td></tr>
+      <tr><td>Revenue</td><td>4.00m</td><td>10.80m</td><td>13.73m</td><td>16.96m</td><td>20.45m</td></tr>
+      <tr><td>Gross margin</td><td>45%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td></tr>
+      <tr><td>Staff costs</td><td>1.04m</td><td>1.37m</td><td>1.63m</td><td>1.91m</td><td>2.23m</td></tr>
+      <tr><td>EBITDA</td><td>136k</td><td>2.95m</td><td>3.95m</td><td>5.06m</td><td>6.25m</td></tr>
+      <tr><td>Net profit</td><td>-517k</td><td>1.74m</td><td>2.23m</td><td>2.98m</td><td>3.87m</td></tr>
+      <tr><td>Year-end cash</td><td>1.26m</td><td>2.17m</td><td>3.89m</td><td>3.38m</td><td>3.76m</td></tr>
+    </table>
+    <div class="stats" style="margin-top:16px;">
+      <div class="stat"><div class="num">R20.4m</div><div class="lbl">revenue by 2031, base case</div></div>
+      <div class="stat"><div class="num">R6.25m</div><div class="lbl">EBITDA by 2031, base case</div></div>
+      <div class="stat"><div class="num">2028</div><div class="lbl">cash positive</div></div>
+    </div>
+    <p style="font-size:12.5px;color:var(--text-muted);margin-top:14px;">Drivers: schools served (6&ndash;8 on first equipment, ~12 at the full factory from 2029, then a few machines and hires per year, paid from cash flow); R1m revenue per school at 2027 prices, growing 5% per year; margin at 45% in 2027 rising to 50% once production is local; costs from a R60k/month team from January 2027 to R114k/month at the full factory; branding revenue growing from R100k to R1m. Dividends start in 2030 from half of cash above R1m, which is why that year&rsquo;s cash dips.</p>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><span class="n">06</span><h2>Use of funds and milestones</h2></div>
+    <p>The R5m comes in three tranches: <b>R500k &rarr; R1.5m &rarr; R5m</b>. Tranches 1 and 2 together, R1.5m, are the minimum close: they put Uniformitys in its own premises with stock for the 2027 season. Tranche 3, R3.5m, builds the full factory.</p>
+    <table class="figtable">
+      <tr><th>Tranche</th><th>Amount</th><th>Uses</th><th>Milestone</th></tr>
+      <tr><td class="k">1. Stock &amp; trade</td><td>R500k</td><td>Raw materials R175k &middot; shop &amp; tailoring team Jan&ndash;Mar R180k &middot; machine loan arrears R90k &middot; accounts, systems &amp; buffer R55k</td><td>Sells hard into Jan&ndash;Feb 2027</td></tr>
+      <tr><td class="k">2. Premises &amp; shop</td><td>R1m (to R1.5m)</td><td>Property incl. transfer costs R863k &middot; shop counter R40k &middot; ordering &amp; stock system R50k &middot; jersey stock R48k</td><td>Shop open by mid-2027, serving 6&ndash;8 schools</td></tr>
+      <tr><td class="k">3. Local production</td><td>R3.5m (to R5m)</td><td>Equipment R2.23m &middot; contingency R130k &middot; bulk fabric R300k &middot; team build &amp; runway R842k</td><td>Full factory for the Dec 2027&ndash;Feb 2028 season</td></tr>
+      <tr><td class="k"><b>Total</b></td><td><b>R5m</b></td><td></td><td>Cash positive in 2028</td></tr>
+    </table>
+    <h3 style="font-size:13px;margin-top:18px;margin-bottom:8px;color:var(--royal);">The equipment in Tranche 3</h3>
+    <table class="figtable">
+      <tr><th>Item</th><th>Amount</th></tr>
+      <tr><td>Sublimation printer and heat press</td><td>R770k</td></tr>
+      <tr><td>Embroidery machines and software</td><td>R373k</td></tr>
+      <tr><td>DTF printer</td><td>R348k</td></tr>
+      <tr><td>Sewing and finishing line, 12 machines</td><td>R322k</td></tr>
+      <tr><td>Delivery van</td><td>R232k</td></tr>
+      <tr><td>Knitwear machines, cutting tables, design PC</td><td>R183k</td></tr>
+      <tr><td><b>Total, rounded</b></td><td><b>R2.23m</b></td></tr>
+    </table>
+    <p style="font-size:12.5px;color:var(--text-muted);margin-top:10px;">Main items are quoted by South African suppliers. A laser cutter (about R400k) is left out of the raise and bought from cash in 2030. Contingency is 10% on lines without a firm quote, 5% on quoted lines.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="n">07</span><h2>The offer</h2></div>
+    <p style="font-family:var(--display);font-weight:600;color:var(--royal);font-size:17px;text-transform:none;">R5m to build the factory and shop in Kabokweni: a R3m secured note and R2m of equity for 20%.</p>
+    <ol style="font-size:13.5px;">
+      <li><b>Minimum ticket and minimum close.</b> Minimum ticket R250k, in the note or equity. The minimum close is R1.5m, which the note covers.</li>
+      <li><b>What each tranche funds.</b> R500k stocks the 2027 season; R1.5m opens the premises and shop with stock; R5m adds the production divisions and the team.</li>
+      <li><b>How the money comes back.</b> The note is repaid in equal instalments from 2028 to 2032 after one year of capitalised interest. Equity returns through dividends from 2030, paid from half of the cash above R1m, and through the value of the stake.</li>
+    </ol>
+    <h3 style="font-size:13px;margin-top:16px;margin-bottom:8px;color:var(--royal);">Why this structure</h3>
+    <ol style="font-size:13.5px;">
+      <li>Most of the money buys hard assets: R863k of property and R2.23m of equipment, which suits a secured note at a cost the business can carry from 2028.</li>
+      <li>The note is sized to the floor case: even at R750k per school the business is EBITDA-positive from 2028 and repays the note in full, using a one-off capital holiday if needed.</li>
+      <li>Equity takes the production ramp risk and shares in the upside: each school above the base adds about R450k of contribution a year.</li>
+    </ol>
+    <p style="font-size:12.5px;color:var(--text-muted);">Uniformitys is open to an investor&rsquo;s own term sheet.</p>
+  </section>
+
+  <section class="alt">
+    <div class="section-head"><span class="n">08</span><h2>Your position</h2></div>
+    <p style="font-size:13.5px;">A R250k ticket buys 2.5% of Upturn Operations in equity, or a R250k share of the secured note. Base-case returns below assume investment at the start of 2027.</p>
+    <table class="figtable">
+      <tr><th>R250k ticket</th><th>Equity</th><th>Secured note</th></tr>
+      <tr><td>What you hold</td><td>2.5% of the shares</td><td>A share of a R3m note, secured on property and equipment</td></tr>
+      <tr><td>Cash back by</td><td>End 2031 (dividends plus stake value)</td><td>End 2032 (instalments from 2028)</td></tr>
+      <tr><td>Total back</td><td>R905k</td><td>R398k</td></tr>
+      <tr><td>Multiple of money</td><td><b>3.62x</b></td><td><b>1.59x</b></td></tr>
+      <tr><td>IRR</td><td><b>29.8%</b></td><td><b>12.75%</b></td></tr>
+    </table>
+    <p style="font-size:11.5px;color:var(--text-muted);margin-top:8px;">Stake value at end 2031 is EBITDA at 4.5 times, less the note, plus cash. Realising it needs a buyer or a buy-back.</p>
+    <h3 style="font-size:13px;margin-top:18px;margin-bottom:8px;color:var(--royal);">Three scenarios</h3>
+    <table class="figtable">
+      <tr><th></th><th>Floor</th><th>Base</th><th>Upside</th></tr>
+      <tr><td>Revenue / school / year (2027 prices)</td><td>R750k</td><td>R1m</td><td>R1.5m</td></tr>
+      <tr><td>Schools fully served by 2031</td><td>14</td><td>16</td><td>16</td></tr>
+      <tr><td>Revenue 2029</td><td>R8.77m</td><td>R13.73m</td><td>R20.35m</td></tr>
+      <tr><td>EBITDA 2029</td><td>R1.28m</td><td>R3.95m</td><td>R6.93m</td></tr>
+      <tr><td>EBITDA 2031</td><td>R2.56m</td><td>R6.25m</td><td>R10.63m</td></tr>
+      <tr><td>Lowest year-end cash</td><td>R208k</td><td>R1.26m</td><td>R1.80m</td></tr>
+      <tr><td>Lowest debt service cover</td><td>0.77x</td><td>3.09x</td><td>5.56x</td></tr>
+      <tr><td>Equity multiple by 2031</td><td>1.15x</td><td>3.62x</td><td>6.50x</td></tr>
+      <tr><td>Equity IRR</td><td>2.8%</td><td>29.8%</td><td>46.5%</td></tr>
+    </table>
+    <p style="font-size:11.5px;color:var(--text-muted);margin-top:8px;">At the floor the business is EBITDA-positive from 2028, but that year&rsquo;s earnings cover only 0.77 times the first note instalment. Cash on hand covers the gap: it stays positive, at about R208k at its lowest, without using the one-off 12-month capital holiday, and the note is repaid in full. From 2029, when the covenant is first tested, the floor case covers debt service 1.34 times, above the 1.2x minimum.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="n">09</span><h2>Risks and answers</h2></div>
+    <div class="riskhead"><span>Risk</span><span>What could happen</span><span>Our answer</span></div>
+    <div class="riskgrid">
+      <div class="riskrow"><div class="h">Early-stage records</div><div><span class="col-h">What could happen</span>Stock is tracked on paper and the books are still being brought up to date</div><div><span class="col-h">Our answer</span>The ordering, payment and stock system goes in with the raise; monthly management accounts from 2027</div></div>
+      <div class="riskrow"><div class="h">Spend per learner</div><div><span class="col-h">What could happen</span>Families spend less than R1,000 per year</div><div><span class="col-h">Our answer</span>At the floor of R750 per learner the business is still EBITDA-positive from 2028 and repays the note; hiring and growth capex slow to match</div></div>
+      <div class="riskrow"><div class="h">Schools sign slowly</div><div><span class="col-h">What could happen</span>Four schools are fully on board; the wider pipeline rests on expressed intent and one signed letter of intent</div><div><span class="col-h">Our answer</span>About 5 schools cover fixed costs; hires are released only as schools sign; written intent from each 2027 focus school before Tranche 3</div></div>
+      <div class="riskrow"><div class="h">One founder</div><div><span class="col-h">What could happen</span>Sphiwe holds the school relationships and runs production</div><div><span class="col-h">Our answer</span>A sales and shop manager joins in 2027; senior leads in each division; N+1 runs accounts and systems</div></div>
+      <div class="riskrow"><div class="h">Production ramp</div><div><span class="col-h">What could happen</span>New machines and staff take time to reach quality and speed</div><div><span class="col-h">Our answer</span>Divisions start mid-2027, six months before the main season; current tailors train the new team; bought-in supply stays as backup</div></div>
+      <div class="riskrow"><div class="h">Seasonality</div><div><span class="col-h">What could happen</span>Most sales fall in December to February</div><div><span class="col-h">Our answer</span>Stock built ahead; lay-by and pay-now-collect-later spread payments; branding and matric wear sell all year</div></div>
+      <div class="riskrow"><div class="h">Property</div><div><span class="col-h">What could happen</span>Title, zoning or transfer delays</div><div><span class="col-h">Our answer</span>Quote valid to April 2027; a second building is an option; production can start in the current space</div></div>
+    </div>
+  </section>
+
+  <div class="split" style="padding:24px 48px 0;">
+    <div class="img" style="flex:1;">
+      <div class="photo"><img src="img/mntungwa-range.jpg" alt="Schoolchildren in Uniformitys uniforms"></div>
+      <p class="caption">Learners at one of the 23 schools that have expressed intent to make Uniformitys their supplier.</p>
+    </div>
+    <div class="txt" style="flex:1.3;">
+      <p style="font-family:var(--display);font-weight:600;color:var(--royal);font-size:16px;text-transform:none;line-height:1.35;">Five schools get Uniformitys to breakeven. Twenty-three are waiting.</p>
+    </div>
+  </div>
+
+  <div class="annexhead">
+    <h1>Annex: indicative term sheet</h1>
+    <p>Indicative only and not an offer of securities. To be reviewed by a South African corporate lawyer and accountant before any term is agreed.</p>
+  </div>
+
+  <section>
+    <h3 style="font-size:14px;margin-bottom:10px;">A. Secured note</h3>
+    <table class="figtable">
+      <tr><th>Term</th><th>Proposed</th></tr>
+      <tr><td>Issuer</td><td>Upturn Operations (Pty) Ltd, trading as Uniformitys (Reg. 2023/651080/07)</td></tr>
+      <tr><td>Amount</td><td>R3m</td></tr>
+      <tr><td>Interest</td><td>Prime plus 2%, 12.75% today</td></tr>
+      <tr><td>Interest holiday</td><td>Capitalised in 2027</td></tr>
+      <tr><td>Repayment</td><td>Equal annual instalments, 2028 to 2032</td></tr>
+      <tr><td>Security</td><td>First bond over the Kabokweni property and a notarial bond or cession over the production equipment</td></tr>
+      <tr><td>Covenant</td><td>Debt service cover of at least 1.2x, tested yearly from 2029</td></tr>
+      <tr><td>Relief</td><td>One-off right to a 12-month capital holiday, with interest paid</td></tr>
+      <tr><td>Minimum ticket</td><td>R250k</td></tr>
+      <tr><td>Use</td><td>Tranches 1 and 2 (R1.5m), with the balance to Tranche 3</td></tr>
+    </table>
+  </section>
+
+  <section class="alt">
+    <h3 style="font-size:14px;margin-bottom:10px;">B. Equity</h3>
+    <table class="figtable">
+      <tr><th>Term</th><th>Proposed</th></tr>
+      <tr><td>Amount</td><td>R2m</td></tr>
+      <tr><td>Instrument</td><td>Ordinary shares</td></tr>
+      <tr><td>Stake</td><td>20% on a fully diluted basis after the raise</td></tr>
+      <tr><td>Pre-money value</td><td>R8m</td></tr>
+      <tr><td>Minimum ticket</td><td>R250k</td></tr>
+      <tr><td>Use</td><td>Tranche 3: production equipment, team build and runway</td></tr>
+      <tr><td>Dividend policy</td><td>From 2030, half of year-end cash above R1m, subject to the note and solvency and liquidity tests</td></tr>
+      <tr><td>Information</td><td>Monthly management accounts; annual financial statements</td></tr>
+      <tr><td>Board</td><td>One seat for equity investors as a group</td></tr>
+      <tr><td>Exit</td><td>Tag-along and drag-along; a buy-back option for the company from 2031 at a value set by an agreed formula</td></tr>
+    </table>
+    <h3 style="font-size:13px;margin-top:18px;margin-bottom:8px;color:var(--royal);">Shareholding and shareholder loans</h3>
+    <table class="figtable">
+      <tr><th>Shareholder</th><th>Today</th><th>After the raise</th><th>Loan to the company</th></tr>
+      <tr><td>N+1: Impact Venture Partners</td><td>26% (26 shares)</td><td>20.8%</td><td>R147,559</td></tr>
+      <tr><td>Sphiwe Masinga</td><td>74% (74 shares)</td><td>59.2%</td><td>R90,000</td></tr>
+      <tr><td>New equity investors</td><td></td><td>20%</td><td></td></tr>
+      <tr><td><b>Total</b></td><td><b>100 shares</b></td><td><b>125 shares</b></td><td><b>R237,559</b></td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <div class="contacts">
+      <b>Sphiwe Masinga</b>, Founder &middot; sphiwe@uniformitys.co.za &middot; 082 595 0723<br>
+      <b>Matt Beckett</b>, Venture Partner &middot; matt@np1.co.za &middot; 083 457 4119
+    </div>
+    <div class="bynp1"><img src="img/np1-fountain-gold.svg" alt=""><span>by N+1</span></div>
+  </footer>
+
+</div>
+</body>
+</html>

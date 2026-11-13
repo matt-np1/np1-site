@@ -10,3 +10,8 @@
   for = "/ezulwini/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/uniformitys/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
